@@ -2,19 +2,54 @@ package application;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
+import exception.DbException;
+import exception.DbIntegrityException;
 import services.DB;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
+		
 		Connection conn = null;
+		Statement st = null;
+	
+		try {
+			conn = DB.getConnection();
+			
+			conn.setAutoCommit(false);
+			
+			st = conn.createStatement();
+			
+			int rows1 = st.executeUpdate("UPDATE seller SET baseSalary = 2090.0 WHERE departmentId = 1");
+			
+			int x = 1;
+			
+			if(x < 2) {
+				throw new SQLException("Fake Error");
+			}
+			
+			int rows2 = st.executeUpdate("UPDATE seller SET baseSalary = 2090.0 WHERE departmentId = 1");
+			
+			conn.commit();
+			
+			System.out.println(rows1);
+			System.out.println(rows2);
+		}catch(SQLException e) {
+			try {
+				conn.rollback();
+				throw new DbException("Transaction rolled back! Caused by: " + e.getMessage());
+				
+			} catch (SQLException e1) {
+				throw new DbException("Error trying to rollback! Caused by: " + e1.getMessage()); 
+				
+			}
+		}
+		//-----------------DELETAR DADOS-------------------
+		/*Connection conn = null;
 		PreparedStatement st = null;
 		try {
 			conn = DB.getConnection();
@@ -28,13 +63,15 @@ public class Program {
 			
 			st.setInt(1, 5);
 			
+			int rowsAffected = st.executeUpdate();
+			
 		}catch(SQLException e) {
-			e.printStackTrace();
+			throw new DbIntegrityException(e.getMessage());
 		}finally {
 			DB.closeStatement(st);
 			DB.closeConnection();
-		}
-		
+		}*/
+		//-----------------DELETAR DADOS-------------------
 		//----------------ATUALIZAR DADOS------------------
 		/*Connection conn = null;
 		PreparedStatement st = null;
