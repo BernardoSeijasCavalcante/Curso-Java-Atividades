@@ -1,20 +1,90 @@
 package application;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Date;
+import java.util.List;
 
-import exception.DbException;
-import exception.DbIntegrityException;
-import services.DB;
+import model.Department;
+import model.Seller;
+import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
+import model.dao.SellerDao;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
+		System.out.println("SellerDao");
+		System.out.println("Inserindo Dados");
 		
-		Connection conn = null;
+		SellerDao sellerDao = DaoFactory.createSellerDao();
+		
+		Department dep = new Department(1,"Computers");
+		
+		Seller sel = new Seller("Bob Brown", "bob@gmail.com", new java.sql.Date(new Date().getTime()),4000.0,dep);
+		sellerDao.insert(sel);
+		System.out.println("Vendedor inserido com sucesso!");
+		
+		System.out.println("Atualizando Dados");
+		sel.setName("Alice Angel");
+		sellerDao.update(sel);
+		System.out.println("Dados atualizados com sucesso!");
+		
+		System.out.println("Resgatando Dados");
+		System.out.println(sellerDao.findById(sel.getId()));
+		System.out.println("Dados resgatados com sucesso!");
+		
+		System.out.println("Deletando Dados");
+		sellerDao.deleteById(sel.getId());
+		System.out.println("Dados deletados com sucesso!");
+		
+		System.out.println("Resgatando Tudo");
+		List<Seller> list = sellerDao.findAll();
+		for(Seller s : list) {
+			System.out.println(s);
+		}
+		System.out.println("Dados resgatados com sucesso!");
+		
+		System.out.println("Resgatando por Departamento");
+		List<Seller> list2 = sellerDao.findByDepartment(dep);
+		for(Seller s : list2) {
+			System.out.println(s);
+		}
+		System.out.println("Dados resgatados com sucesso!");
+		
+		//----------------------------------------------------------------
+		
+		System.out.println("DepartmentDao");
+		System.out.println("Inserindo Dados");
+		
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		
+		Department depP = new Department(1,"Food");
+		
+		departmentDao.insert(depP);
+		System.out.println("Departamento inserido com sucesso!");
+		
+		System.out.println("Atualizando Dados");
+		depP.setName("Tables");
+		departmentDao.update(depP);
+		System.out.println("Dados atualizados com sucesso!");
+		
+		System.out.println("Resgatando Dados");
+		System.out.println(departmentDao.findById(depP.getId()));
+		System.out.println("Dados resgatados com sucesso!");
+		
+		System.out.println("Deletando Dados");
+		departmentDao.deleteById(depP.getId());
+		System.out.println("Dados deletados com sucesso!");
+		
+		System.out.println("Resgatando Tudo");
+		List<Department> listD = departmentDao.findAll();
+		for(Department s : listD) {
+			System.out.println(s);
+		}
+		System.out.println("Dados resgatados com sucesso!");
+		
+		//-------------TRANSAÇÕES-------------
+		/*Connection conn = null;
 		Statement st = null;
 	
 		try {
@@ -47,7 +117,8 @@ public class Program {
 				throw new DbException("Error trying to rollback! Caused by: " + e1.getMessage()); 
 				
 			}
-		}
+		}*/
+		//-------------TRANSAÇÕES-------------
 		//-----------------DELETAR DADOS-------------------
 		/*Connection conn = null;
 		PreparedStatement st = null;
