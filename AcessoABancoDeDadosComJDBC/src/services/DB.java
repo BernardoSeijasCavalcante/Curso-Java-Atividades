@@ -51,7 +51,7 @@ public class DB {
 	}
 	 
 	//-------------Conexão com o Banco - Primeiro Passo--------------
-
+	//-------------Fechando atributos de Consulta--------------------
 	public static void closeStatement(Statement st) {
 		if(st != null) {
 			try {
@@ -71,4 +71,5 @@ public class DB {
 			}
 		}
 	}
+	//-------------Fechando atributos de Consulta--------------------
 }
