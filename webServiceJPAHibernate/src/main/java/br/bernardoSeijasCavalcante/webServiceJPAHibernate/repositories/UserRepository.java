@@ -7,6 +7,4 @@ import br.bernardoSeijasCavalcante.webServiceJPAHibernate.entities.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 	
 	
-	
-	
 }
