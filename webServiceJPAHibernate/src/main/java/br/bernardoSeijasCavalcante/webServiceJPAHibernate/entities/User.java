@@ -3,10 +3,20 @@ package br.bernardoSeijasCavalcante.webServiceJPAHibernate.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity //Instruir o sistema que este objeto deve ser convertido para seu modelo relacional (uma tabela)
+@Table(name = "tb_user")
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id//Definir atributo como primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Definir que o atributo é auto incrementável 
 	private Long id;
 	private String name;
 	private String email;
