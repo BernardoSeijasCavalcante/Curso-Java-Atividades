@@ -18,6 +18,7 @@ import jakarta.persistence.Table;
 @Table(name = "tb_user")
 public class User implements Serializable{
 	
+	//É necessário serializar a classe para que ela trafegue em rede e seja salva em cache. Ela será transformada em uma sequência de bytes 
 	private static final long serialVersionUID = 1L;
 	
 	@Id//Definir atributo como primary key

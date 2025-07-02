@@ -18,6 +18,7 @@ public class OrderItem implements Serializable {
 	
 	@EmbeddedId
 	private OrderItemPK id = new OrderItemPK();
+	
 	private Integer quantity;
 	private Double price;
 	
@@ -68,7 +69,9 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 
-
+	public Double getSubTotal() {//Para aparecer no resultado do Json, deve conter get como prefixo do nome do método
+		return price * quantity;
+	}
 
 	@Override
 	public int hashCode() {
