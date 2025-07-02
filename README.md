@@ -34,8 +34,8 @@ Este repositório serve como recurso didático e portfólio para a formação pr
     </tr>
     <tr>
       <td colspan=2>
-        <a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/tree/main/AcessoABancoDeDadosComJDBC">Clique para abrir os arquivos do projeto!</a>
-        <div><a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/blob/main/Documenta%C3%A7%C3%A3o/AcessoABancoDeDadosComJDBC.pdf">Clique para abrir a documentação do projeto!</a></div>
+        <a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/tree/main/webServiceJPAHibernate">Clique para abrir os arquivos do projeto!</a>
+        <div><a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/blob/main/Documenta%C3%A7%C3%A3o/webServiceJPAHibernate.pdf">Clique para abrir a documentação do projeto!</a></div>
       </td>
     </tr>
   </table>
@@ -88,8 +88,8 @@ Este repositório serve como recurso didático e portfólio para a formação pr
   <table>
     <tr>
       <td>
-        <a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/tree/main/AcessoABancoDeDadosComJDBC">Clique para abrir os arquivos do projeto!</a>
-        <div><a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/blob/main/Documenta%C3%A7%C3%A3o/AcessoABancoDeDadosComJDBC.pdf">Clique para abrir a documentação do projeto!</a></div>
+        <a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/tree/main/aulajpamaven">Clique para abrir os arquivos do projeto!</a>
+        <div><a href="https://github.com/BernardoSeijasCavalcante/Curso-Java-Atividades/blob/main/Documenta%C3%A7%C3%A3o/aulajpamaven.pdf">Clique para abrir a documentação do projeto!</a></div>
       </td>
     </tr>
     
