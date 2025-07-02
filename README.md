@@ -95,3 +95,12 @@ Este repositório serve como recurso didático e portfólio para a formação pr
     
   </table>
 </div>
+
+<h2>⚖️ Licença:</h2>
+<ul>
+  <li>O código-fonte segue a licença MIT. Trechos adaptados de Java COMPLETO Programação Orientada a Objetos + Projetos, da Udemy.</li>
+  <li>A documentação foi criada por mim.</li>  
+</ul>
+
+
+
